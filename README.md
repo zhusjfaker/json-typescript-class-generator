@@ -1,4 +1,4 @@
-# Vue-Component-build
+# json-typescript-class-generator
 Automatically generate classes that inherit JSON serialization classes based on JSON files
 
 ## 目的
