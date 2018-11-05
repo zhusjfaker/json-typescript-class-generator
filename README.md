@@ -1,12 +1,13 @@
 # Vue-Component-build
-Vue is similar to angular/cli function automatic building component.
+Automatically generate classes that inherit JSON serialization classes based on JSON files
 
 ## 目的
-* 方便TS的小伙伴接收类似NG的功能开发VUE代码分离从而更容易排查错误(注意!!! 可能会舍弃vue一部分模板类型自检的功能跳过某些BUG!).
+* 方便TS的小伙伴自动根据请求回来的JSON字符串生成可以"响应"/"订阅"的数据类 配合序列化JSONMODIFY 共同使用.
 
 
 ## 代码环境
 * node 8.6 +
+* @zhusj/jsonmodify (ps: npm i @zhusj/jsonmodify -D)
 
 ## 安装
 * sudo npm install @zhusj/vue-component-build -g
