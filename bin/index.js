@@ -3,13 +3,18 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require("path");
+const covert = (str) => {
+    return str.replace(/-([a-z])/g, function (all, letter) {
+        return letter.toUpperCase();
+    });
+};
 const generator = (argv) => {
     const fileSession = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
     console.log("当前进程号:" + process.pid);
-    let classespath = process.cwd() + "/src/classes";
+    let classespath = process.cwd() + "/src/classes/";
     var filename = null;
     var filepath = null;
     console.log("当前默认创建路径: " + classespath);
@@ -28,9 +33,18 @@ const generator = (argv) => {
             });
         });
     };
+    const createFileSeesion = async () => {
+        return new Promise((resolve, reject) => {
+            fileSession.question("当前创建类名: \n", (answer) => {
+                filename = answer;
+                filepath = classespath + "/" + covert(answer) + ".ts";
+                resolve();
+            });
+        });
+    };
     const session = async () => {
         await comfirmClassPath();
-        // await createFileSeesion();
+        await createFileSeesion();
         // await createContentClass();
         fileSession.close();
     };

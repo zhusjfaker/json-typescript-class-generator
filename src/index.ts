@@ -3,6 +3,12 @@ const fs = require('fs');
 const readline = require('readline');
 const path = require("path");
 
+const covert = (str: string): string => {
+    return str.replace(/-([a-z])/g, function (all, letter) {
+        return letter.toUpperCase();
+    });
+}
+
 const generator = (argv: any[]): void => {
 
     const fileSession = readline.createInterface({
@@ -35,10 +41,20 @@ const generator = (argv: any[]): void => {
         });
     }
 
+    const createFileSeesion = async () => {
+        return new Promise((resolve, reject) => {
+            fileSession.question("当前创建类名: \n", (answer: string) => {
+                filename = answer;
+                filepath = classespath + "/" + covert(answer) + ".ts";
+                resolve();
+            });
+        })
+    }
+
 
     const session = async () => {
         await comfirmClassPath();
-        // await createFileSeesion();
+        await createFileSeesion();
         // await createContentClass();
         fileSession.close();
     }
