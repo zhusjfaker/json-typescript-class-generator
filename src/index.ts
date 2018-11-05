@@ -12,20 +12,32 @@ const generator = (argv: any[]): void => {
 
     console.log("当前进程号:" + process.pid);
 
-    let classespath = path.resolve(__dirname) + "/src/classes";
+    let classespath = process.cwd() + "/src/classes/";
     var filename = null;
     var filepath = null;
 
     console.log("当前默认创建路径: " + classespath);
 
     // close事件监听
-    fileSession.on("close", function() {
+    fileSession.on("close", function () {
         // 结束程序
         process.exit(0);
     });
 
-    const session = async() => {
-        // await comfirmClassPath();
+    const comfirmClassPath = async () => {
+        return new Promise((resolve, reject) => {
+            fileSession.question(`确认当前默认路径(${classespath}): \n`, (answer: string) => {
+                if (answer && answer != "") {
+                    classespath = path.resolve(__dirname) + answer;
+                }
+                resolve();
+            });
+        });
+    }
+
+
+    const session = async () => {
+        await comfirmClassPath();
         // await createFileSeesion();
         // await createContentClass();
         fileSession.close();
