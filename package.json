@@ -1,6 +1,6 @@
 {
     "name": "@zhusj/json-typescript-class-generator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Automatically generate classes that inherit JSON serialization classes based on JSON files",
     "main": "index.js",
     "scripts": {
