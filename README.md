@@ -14,5 +14,5 @@ Automatically generate classes that inherit JSON serialization classes based on 
 
 ## 使用教程
 * "json-convert" 为调用命令行工具 (具体操作见下图!)
-* ![Image text](https://github.com/zhusjfaker/json-typescript-class-generator/blob/master/img/index.png)
+![Image text](https://github.com/zhusjfaker/json-typescript-class-generator/blob/master/img/index.png)
 
