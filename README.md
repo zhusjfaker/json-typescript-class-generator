@@ -10,13 +10,9 @@ Automatically generate classes that inherit JSON serialization classes based on 
 * @zhusj/jsonmodify (ps: npm i @zhusj/jsonmodify -D)
 
 ## 安装
-* sudo npm install @zhusj/vue-component-build -g
+* sudo npm install @zhusj/json-typescript-class-generator -g
 
 ## 使用教程
-* 以下 "${****}" 为可替换部分
-* 在任意console路径下: vue-component --name ${you wanted to define Component Name} --path ${Relative path suffix of current path}
-* vue-component --name test --path ./src/component/  
-* 本版本提供以下简单创建方式
-* vue-component ${you wanted to define Component Name}
-* example: vue-component test (ps: path 默认是 ./src/components! 第一个参数为 组件名称 )
+* "json-convert" 为调用命令行工具 (具体操作见下图!)
+* ![Image text](https://github.com/zhusjfaker/json-typescript-class-generator/blob/master/img/index.png)
 
