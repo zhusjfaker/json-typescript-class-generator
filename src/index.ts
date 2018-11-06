@@ -194,7 +194,7 @@ const generator = (argv: any[]): void => {
      * Getter ${p}
      * @return {any[]}
      */
-    @JsonProp()
+    @JsonModelArray({})
     public get ${p}(): any[] {
         return this._${p}!;
     }
