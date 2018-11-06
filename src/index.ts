@@ -139,6 +139,29 @@ const generator = (argv: any[]): void => {
     }
                         `;
 
+                    } else if (typeof originModel[p] == "boolean") {
+                        keycontent += `
+
+    private _${p}!: boolean;
+
+    /**
+     * Getter ${p}
+     * @return {boolean}
+     */
+    @JsonProp()
+    public get ${p}(): boolean {
+        return this._${p};
+    }
+
+    /**
+     * Setter ${p}
+     * @param {boolean} value
+     */
+    public set ${p}(value: boolean) {
+        this._${p} = value;
+    }
+                        `;
+
                     } else if (typeof originModel[p] == "object") {
                         if (originModel[p] === null) {
                             keycontent += `
