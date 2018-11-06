@@ -1,8 +1,6 @@
 {
-    "countChannelDelayTask": 0,
-    "countChannelNoAcceptTask": 0,
-    "countChannelAcceptTask": 0,
-    "name": "新疑似刷量用户视频1",
-    "id": 377,
-    "countChannelTask": 0
+    "title": "首页",
+    "isfold": false,
+    "url": "",
+    "children": []
 }
