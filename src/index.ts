@@ -236,7 +236,7 @@ const generator = (argv: any[]): void => {
 
                 /** 开始写文件 */
                 let content = `
-import { JsonSerializable, JsonProp } from 'jsonmodify';
+import { JsonSerializable, JsonProp } from '@zhusj/jsonmodify';
                 
 export class ${filename} extends JsonSerializable{
     
